@@ -15,7 +15,7 @@
   transition : all ease-in-out 600ms;
 }
 .hidden{
-  transition : 0.5s;
+  transition : 0.6s;
   display : none;
 }
 /* .splash-header {
@@ -28,26 +28,26 @@
   align-items : center;
 } */
 .start{
-    position : absolute;
-    top : 60%;
-    left : 50%;
-    transform : translate(-50%,-50%);
-    color : white;
-    background: linear-gradient(to bottom, #000046, #1CB5E0);
-    font-size : 30px;
-    font-family : consolas;
-    cursor : pointer;
-    border : 2px solid white;
-    padding : 10px 20px;
-    border-radius : 5px;
-    transition : all 0.5s;
+  position : absolute;
+  top : 60%;
+  left : 50%;
+  transform : translate(-50%,-50%);
+  color : white;
+  background: linear-gradient(to bottom, #000046, #1CB5E0);
+  font-size : 30px;
+  font-family : consolas;
+  cursor : pointer;
+  border : 2px solid white;
+  padding : 10px 20px;
+  border-radius : 5px;
+  transition : all 0.5s;
 }
 
 
 .start:hover{
-    background: linear-gradient(to bottom, #1CB5E0, #000046);
-    color : white;
-    border : 2px solid white;
+  background: linear-gradient(to bottom, #1CB5E0, #000046);
+  color : white;
+  border : 2px solid white;
 }
 
  

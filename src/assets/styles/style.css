@@ -1,8 +1,6 @@
-
-/* Custom CSS variables */
 :root {
-  --primary: #1f253d;
-  --secondary: #9099b7;
+  --primary: linear-gradient(#021B4B, #012E7E);
+  --secondary: #ECE3D8;
   --gray: #333;
   --orange: #FE9C00;
   --green: #5FC51E;
@@ -14,8 +12,6 @@ body {
   background-position: center; 
   background-repeat: no-repeat;
   color: white;
-  margin: 0;
-  padding: 0;
   display: flex;
   justify-content: center;
   align-items: flex-end;
@@ -71,7 +67,7 @@ body {
   flex: 1 1 calc(50% - 10px); 
   max-width: 300px;
   padding: 15px;
-  background:#1f253d;
+  background: var(--primary);
   color: white;
   border: 3px solid var(--secondary);
   border-radius: 15px;
@@ -89,7 +85,6 @@ body {
   cursor: not-allowed;
 }
 
-/* Correct and wrong answers */
 .correct-answer {
   background: var(--green) !important;
   border-color: var(--secondary) !important;
@@ -102,13 +97,12 @@ body {
   color: white;
 }
 
-/* Restart button */
 #restart-btn {
   margin-top: 20px;
   padding: 15px 20px;
   color: #fff;
   background: linear-gradient(to bottom, #000046, #1CB5E0);
-  border: none;
+  border: 3px solid var(--secondary);
   border-radius: 10px;
   cursor: pointer;
   font-size: 1.2rem;
@@ -121,22 +115,20 @@ body {
 }
 
 .quiz-header {
-
+  background: var(--primary);
+  border-radius: 5px;
+  border: 3px solid var(--secondary);
+  padding: 15px;
   font-size: 1.8rem;
   margin-bottom: 20px;
   color: #ffcc00;
   text-shadow: 0 0 5px #fff, 0 0 10px #ffcc00;
 }
 
-.next-question-container {
-  position: absolute;
-  top: 20px; 
-  right: 20px;
-}
 .next-question-container button {
   background: linear-gradient(to bottom, #000046, #1CB5E0);
   color: white;
-  border: none;
+  border: 1px solid var(--secondary);
   padding: 10px 20px;
   border-radius: 5px;
   cursor: pointer;
@@ -144,20 +136,11 @@ body {
   font-weight: bold;
 }
 
-.next-btn {
-  background-color: var(--orange);
-  color: white;
-  border: none;
-  padding: 10px 20px;
-  border-radius: 5px;
-  cursor: pointer;
-  font-size: 1rem;
-
+.next-question-container button:hover {
+  background: linear-gradient(to bottom, #1CB5E0, #000046);
+  transform: scale(1.05);
 }
 
-.next-btn:hover {
-  background-color: var(--green);
-}
 
 
 .final-score {
@@ -187,11 +170,6 @@ body {
     max-width: 100%;
     padding: 10px;
     font-size: 0.9rem;
-  }
-
-  .next-question-container {
-    top: 10px;
-    right: 10px;
   }
 
   .next-question-container button {
@@ -227,11 +205,6 @@ body {
     font-size: 0.95rem;
   }
 
-  .next-question-container {
-    top: 15px;
-    right: 15px;
-  }
-
   .next-question-container button {
     padding: 8px 15px;
     font-size: 0.9rem;
@@ -263,11 +236,6 @@ body {
     max-width: 300px;
     padding: 15px;
     font-size: 1rem;
-  }
-
-  .next-question-container {
-    top: 20px;
-    right: 20px;
   }
 
   .next-question-container button {
