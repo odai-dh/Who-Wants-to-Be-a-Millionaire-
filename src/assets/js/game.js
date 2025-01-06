@@ -28,47 +28,44 @@ async function startGame() {
 function showQuestion() {
     const questionPart = document.getElementById("question");
     const answersPart = document.getElementById("answers");
-
+    const answerLabels = ['A', 'B', 'C', 'D'];
     const question = questions[currentQuestion];
+    
     // To make the answers randomly showing and not in the same place
     const answers = [...question.incorrect_answers, question.correct_answer].sort(() => Math.random() - 0.5);
+
+
 
     questionPart.innerHTML = question.question;
     answersPart.innerHTML = "";
     // Showing the multiple-choice answers 
-    answers.forEach((answer) => {
+    answers.forEach((answer, index) => {
         const button = document.createElement("button");
-        button.innerHTML = answer;
+        button.innerHTML = `<span class="answer-lable">${answerLabels[index]}:</span> ${answer}`;
         button.className = "answer-btn";
-        button.onclick = () => checkAnswer(answer === question.correct_answer, question.correct_answer);
+        button.setAttribute("data-answer", answer);
+        button.onclick = () => checkAnswer(answer === question.correct_answer, answer);
         answersPart.appendChild(button);
     });
 }
 
-function checkAnswer(isCorrect, correctAnswer) {
+function checkAnswer(isCorrect, selectedAnswer) {
     const answersPart = document.getElementById("answers");
 
-    // Find the button that was clicked
-    const selectedButton = Array.from(answersPart.children).find(
-        (button) => button.innerHTML === correctAnswer
-    );
     if (isCorrect) {
-        money += 100000; // Increment money by 100 if the answer is correct
-        if (selectedButton) selectedButton.classList.add("correct-answer");
-    } else {
-        // Show correct answer if the selected one is wrong
-        const correctButton = Array.from(answersPart.children).find(
-            (button) => button.innerHTML === correctAnswer
-        );
-        if (correctButton) correctButton.classList.add("correct-answer");
+        money += 100000; // Increment money by 100000 if the answer is correct
     }
 
-    // Disable all buttons after answering
+    // Show correct answer
     Array.from(answersPart.children).forEach((button) => {
-        button.disabled = true;
-        if (!isCorrect && button.innerHTML !== correctAnswer) {
-            button.classList.add("wrong-answer");
+        const answer = button.getAttribute("data-answer");
+        if (answer === selectedAnswer) {
+            button.classList.add(isCorrect ? "correct-answer" : "wrong-answer");
         }
+        if (answer === questions[currentQuestion].correct_answer) {
+            button.classList.add("correct-answer");
+        }
+        button.disabled = true; // Disable all buttons after answering
     });
 
     // Show the next question button
