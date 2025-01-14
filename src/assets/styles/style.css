@@ -6,7 +6,6 @@
   --green: #5FC51E;
 }
 body {
-  /* background: linear-gradient(to bottom, #000046, #1CB5E0); */
   background-image: url(../images/background6.webp);
   background-size: cover;
   background-position: center; 
@@ -21,9 +20,7 @@ body {
 .quiz-container {
   max-width: 800px;
   width: 100%;
-  /* background: #1f253d; */
   border-radius: 15px;
-  /* box-shadow: 0 4px 15px rgba(0, 0, 0, 0.7); */
   padding: 20px;
   text-align: center;
   color: white;
@@ -40,21 +37,8 @@ body {
   border-radius: 10px;
   box-shadow: inset 0 0 10px rgba(255, 255, 255, 0.1);
   text-align: center;
-  /* position: relative;  */
+
 }
-/* .question::after {
-  content: "";
-  position: absolute;
-  left: 775px;
-  top: -1px;
-  transform: translateX(-50%);
-  width: 0;
-  height: 0;
-  border: var(--secondary);
-  border-top: 33px solid transparent;
-  border-left: 50px solid var(--primary); 
-  border-bottom: 30px solid transparent;
-} */
 
 .answers {
   display: flex;
